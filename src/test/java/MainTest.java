@@ -27,5 +27,26 @@ public class MainTest {
         HomeScreen homeScreenPage= new HomeScreen();
         homeScreenPage.homeScreen();
     }
+    @Test
+    public void test04_assertionURLScreen3() {
+        String byMeeURL3="https://buyme.co.il/search?budget=1&category=359&region=13";
+        Assert.assertEquals(byMeeURL3, DriverSingleton.getDriverInstance().getCurrentUrl());
+
+    }
+    @Test
+    public void test05_pickBusiness() {
+        PickBusiness pickBusinessPage = new PickBusiness();
+        pickBusinessPage.pickBusiness();
+    }
+    @Test
+    public void test_06_receivedInformation() throws InterruptedException {
+        ReceivedInformation receivedInformationPage = new ReceivedInformation();
+        receivedInformationPage.receivedInformation();
+    }
+    @Test
+    public void test_07_sendInformation() {
+        SendInformation sendInformationpage= new SendInformation();
+        sendInformationpage.sendInformation();
+    }
 
     }
