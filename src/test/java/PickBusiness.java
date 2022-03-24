@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PickBusiness extends  MainTest{
+public class PickBusiness extends  BasePage{
     WebDriverWait wait = new WebDriverWait(DriverSingleton.getDriverInstance(), Duration.ofSeconds(10));
     public void pickBusiness(){
         selectBusiness();
