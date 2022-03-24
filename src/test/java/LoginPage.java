@@ -35,7 +35,7 @@ private void enterDetails(){
     String findValidationPassword= DriverSingleton.getDriverInstance().findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div/div[3]/div[2]/div[3]/form/div[4]/label/input")).getAttribute("value");
     Assert.assertEquals(findValidationPassword,Constants.password);
     //Buyme registration
-    DriverSingleton.getDriverInstance().findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div/div[3]/div[2]/div[3]/form/button")).click();//*[@id="ember2004"]
+    clickElement(By.xpath("/html/body/div[3]/div/div[1]/div/div/div[3]/div[2]/div[3]/form/button"));
 }
 
 

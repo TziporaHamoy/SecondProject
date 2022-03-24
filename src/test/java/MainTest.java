@@ -1,3 +1,5 @@
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -5,6 +7,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class MainTest {
+   private static ExtentReports extent= new ExtentReports();
+   private static ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
     @BeforeClass
     public void beforeAll(){
         DriverSingleton.getDriverInstance().get("https://buyme.co.il/");
@@ -12,6 +16,7 @@ public class MainTest {
         DriverSingleton.getDriverInstance().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         DriverSingleton.getDriverInstance().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
+
     @Test
     public void test01_assertionURL(){
         String byMeUrl= "https://buyme.co.il/";

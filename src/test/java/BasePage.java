@@ -10,7 +10,7 @@ public class BasePage {
         getWebElement(locator).sendKeys(text);
     }
 
-    private WebElement getWebElement(By locator) {
+    public WebElement getWebElement(By locator) {
         return DriverSingleton.getDriverInstance().findElement(locator);
     }
 
