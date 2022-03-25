@@ -16,24 +16,28 @@ public class HomeScreen extends BasePage {
         category();
         findPresentToMe();
     }
+    //סכום
     private void price() {
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.cssSelector("span[alt=סכום]"))));
         clickElement(By.cssSelector("span[alt=סכום]"));
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember1064"))));
         clickElement(By.id("ember1064"));
     }
+    //אזור
     private void region() {
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.cssSelector("span[alt=אזור]"))));
         clickElement(By.cssSelector("span[alt=אזור]"));
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember1099"))));
         clickElement(By.id("ember1099"));
     }
+    //קטגוריה
     private void category() {
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.cssSelector("span[alt=קטגוריה]"))));
         clickElement(By.cssSelector("span[alt=קטגוריה]"));
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember1160"))));
         clickElement(By.id("ember1160"));
     }
+    //תמצא לי מתנה
     private void findPresentToMe() {
         clickElement((By.linkText("תמצאו לי מתנה")));
     }

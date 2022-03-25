@@ -1,5 +1,7 @@
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,6 +17,9 @@ public class MainTest {
         DriverSingleton.getDriverInstance().manage().window().maximize();
         DriverSingleton.getDriverInstance().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         DriverSingleton.getDriverInstance().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("C://Users//extent.html");
+        extent.attachReporter(htmlReporter);
+        test.log(Status.INFO, "before test method");
     }
 
     @Test

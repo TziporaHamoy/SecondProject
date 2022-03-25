@@ -14,26 +14,30 @@ public class SendInformation extends BasePage{
         assertSenderName();
         continueToPayment();
     }
+    //לחץ על עכשיו
     private void pressRadioButtonNow(){
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.className("button-now"))));
         clickElement(By.className("button-now"));
     }
+    //לחץ על מייל
     private void pickEmail(){
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.cssSelector("svg[gtm=method-email]"))));
         clickElement(By.cssSelector("svg[gtm=method-email]"));
     }
-    //לחץ על מייל
+    //הכנס מייל
     private void insertEmail(){
         wait.until(ExpectedConditions.elementToBeClickable(By.id("email"))).sendKeys("027103939z@gmail.com");
     }
+    //השוואה של שם השולח
     private void assertSenderName(){
         clearElement(By.xpath("/html/body/div[3]/div/div/div[3]/div/div/div[1]/form/div[3]/div[2]/label/input"));
         sendKeysToElement(By.xpath("/html/body/div[3]/div/div/div[3]/div/div/div[1]/form/div[3]/div[2]/label/input"),Constants.name);
         String senderName = DriverSingleton.getDriverInstance().findElement(By.xpath("/html/body/div[3]/div/div/div[3]/div/div/div[1]/form/div[3]/div[2]/label/input")).getAttribute("value");
         Assert.assertEquals(senderName,Constants.name);
     }
+    //המשך לתשלום
     private void continueToPayment(){
-        wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember2527"))));//ember2962//2527
-        clickElement(By.id("ember2527"));//2705
+        wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember2521"))));//ember2962//2527 2705
+        clickElement(By.id("ember2521"));//2705 2527
     }
 }
