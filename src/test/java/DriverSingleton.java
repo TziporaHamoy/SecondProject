@@ -12,5 +12,6 @@ public class DriverSingleton {
             }
             return driver;
         }
+
     }
 

@@ -37,7 +37,7 @@ public class HomeScreen extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(getWebElement(By.id("ember1160"))));
         clickElement(By.id("ember1160"));
     }
-    //תמצא לי מתנה
+    //תמצאו לי מתנה
     private void findPresentToMe() {
         clickElement((By.linkText("תמצאו לי מתנה")));
     }

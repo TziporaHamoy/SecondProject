@@ -12,7 +12,6 @@ public void login(){
 }
 private void loginOrRegistration(){
     clickElement(By.className("notSigned"));
-    //DriverSingleton.getDriverInstance().findElement(By.className("notSigned"));
 }
   private void registration(){
     clickElement(By.className("text-link"));
